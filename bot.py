@@ -937,8 +937,8 @@ async def cb(_, cb_q: CallbackQuery):
 #   STREAM END → auto-play next
 # ════════════════════════════════════════════════════════════
 
-@calls.on_stream_end()
-async def on_stream_end(_, update):
+# @calls.on_stream_end()
+# async def on_stream_end(_, update):
     cid = update.chat_id
     nxt = Q.next_track(cid)
     if nxt:
