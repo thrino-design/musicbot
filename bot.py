@@ -20,7 +20,8 @@
 
 import os, re, asyncio, logging
 from functools import wraps
-
+from flask import Flask
+from threading import Thread
 from pyrogram import Client, filters, enums
 from pyrogram.types import (
     Message, CallbackQuery,
@@ -37,6 +38,7 @@ from config import Config
 from queue_manager import Q
 from ytdl import search_one, search_many, get_info, download_audio, fmt_dur
 
+
 # ════════════════════════════════════════════════════════════
 #   LOGGING
 # ════════════════════════════════════════════════════════════
@@ -47,6 +49,18 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 log = logging.getLogger("thrino")
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+Thread(target=run_web, daemon=True).start()
 
 # ════════════════════════════════════════════════════════════
 #   CLIENT SETUP
