@@ -9,7 +9,7 @@
 
 pyrogram==2.0.106
 TgCrypto==1.2.5
-py-tgcalls
+py-tgcalls==2.1.0
 yt-dlp
 aiohttp
 aiofiles
