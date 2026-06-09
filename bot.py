@@ -32,7 +32,7 @@ from pyrogram.errors import ChatAdminRequired, UserAdminInvalid
 
 from pytgcalls import PyTgCalls, idle
 from pytgcalls.types import MediaStream, AudioQuality, VideoQuality
-from pytgcalls.exceptions import NoActiveGroupCall, AlreadyJoinedError
+from pytgcalls.exceptions import NoActiveGroupCall
 
 from config import Config
 from queue_manager import Q
@@ -175,7 +175,7 @@ async def do_play(cid: int, filepath: str, track: dict, msg: Message):
             "Group name → ··· → Start Voice Chat\n"
             "Then use `/play` again."
         )
-    except AlreadyJoinedError:
+    except Exception:
         # Already in VC, change stream instead
         await calls.change_stream(
             cid,
