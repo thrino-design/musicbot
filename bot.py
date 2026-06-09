@@ -235,6 +235,9 @@ HELP = """
 • `/cookies` — Cookie status (owner only)
 """
 
+@bot.on_message()
+async def debug_all(_, message):
+    print(f"UPDATE RECEIVED: {message.text}")
 
 @bot.on_message(filters.command(["start", "help"]))
 async def cmd_help(_, msg: Message):
