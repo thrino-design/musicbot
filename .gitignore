@@ -1,0 +1,10 @@
+.env
+cookies.txt
+downloads/
+*.session
+*.session-journal
+__pycache__/
+*.pyc
+.DS_Store
+thrino_bot/
+thrino_user/

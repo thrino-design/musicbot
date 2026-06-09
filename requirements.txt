@@ -1,0 +1,15 @@
+# ════════════════════════════════════════════════════════════
+#   🎵 THRINO MUSIC BOT  ·  requirements.txt
+#
+#   IMPORTANT:
+#   The voice chat package is called  py-tgcalls  on PyPI
+#   but imported as  pytgcalls  in Python.
+#   Do NOT install "pytgcalls" — install "py-tgcalls".
+# ════════════════════════════════════════════════════════════
+
+pyrogram==2.0.106
+TgCrypto==1.2.5
+py-tgcalls
+yt-dlp
+aiohttp
+aiofiles

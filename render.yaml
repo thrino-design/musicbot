@@ -1,0 +1,27 @@
+# ════════════════════════════════════════════════════════════
+#   🎵 THRINO MUSIC BOT  ·  render.yaml
+#   Place this in your repo root.
+#   Service type: Background Worker (NOT Web Service)
+# ════════════════════════════════════════════════════════════
+
+services:
+  - type: worker
+    name: thrino-music-bot
+    env: python
+    buildCommand: apt-get update && apt-get install -y ffmpeg && pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: STRING_SESSION
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: BOT_USERNAME
+        sync: false
+      - key: COOKIES_FILE
+        value: cookies.txt
